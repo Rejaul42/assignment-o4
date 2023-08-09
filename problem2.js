@@ -3,7 +3,7 @@ function matchFinder(string1, string2) {
         return 'Please enter a string'
     }
     else{
-        if(string1.toLowerCase().includes(string2.toLowerCase()) === true){
+        if(string1.includes(string2) === true){
             return true;
         }
         else{
@@ -12,5 +12,5 @@ function matchFinder(string1, string2) {
 }
 }
 const str1 = 'Javascript';
-const str2 = 'acR'
+const str2 = 'scr'
 console.log(matchFinder(str1, str2))

@@ -15,7 +15,7 @@ function matchFinder(string1, string2) {
         return 'Please enter a string'
     }
     else{
-        if(string1.toLowerCase().includes(string2.toLowerCase()) === true){
+        if(string1.includes(string2) === true){
             return true;
         }
         else{
