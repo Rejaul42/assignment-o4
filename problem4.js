@@ -6,7 +6,7 @@ function findAddress(obj) {
         const street = obj.street || '__';
         const house = obj.house || '__';
         const society = obj.society || '__';
-        const fullAddress = street + ',' + house + ', ' + society;
+        const fullAddress = street + ',' + house + ',' + society;
         return fullAddress;
     }
 }
