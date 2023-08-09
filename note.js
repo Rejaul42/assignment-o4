@@ -1,8 +1,8 @@
 function cubeNumber(number) {
-    if (typeof number !== 'number' || number < 0) {
+    if(typeof number !== 'number' || number < 0){
         return 'Please enter a positive number'
     }
-    else {
+    else{
         const cube = number * number * number;
         return cube;
     }
@@ -11,45 +11,48 @@ function cubeNumber(number) {
 
 
 function matchFinder(string1, string2) {
-    if (typeof string1 !== 'string' || typeof string2 !== 'string') {
+    if(typeof string1 !== 'string' || typeof string2 !== 'string'){
         return 'Please enter a string'
     }
-    else {
-        if (string1.toLowerCase().includes(string2.toLowerCase()) === true) {
+    else{
+        if(string1.toLowerCase().includes(string2.toLowerCase()) === true){
             return true;
         }
-        else {
+        else{
             return false;
         }
-    }
+}
 }
 
 
 
 function sortMaker(arr) {
-    if (!Array.isArray(arr)) {
+    if(!Array.isArray(arr)){
         return 'Please enter an array';
     }
-    else if (arr.length !== 2) {
+    else if(arr.length !== 2){
         return 'Please enter two length of array'
     }
-    else if (typeof arr[0] !== 'number' || typeof arr[1] !== 'number') {
+    else if(typeof arr[0] !== 'number' || typeof arr[1] !== 'number'){
         return 'Please enter an array of number'
     }
-    else {
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[0] > 0 && arr[1] > 0) {
-                if (arr[0] < arr[1]) {
-                    return arr.reverse();
-                }
-                else if (arr[0] > arr[1]) {
+    else{
+        for(let i = 0; i <arr.length; i++){
+            if(arr[0] >= 0 && arr[1] >= 0){
+                if(arr[0] < arr[1]){
+                    const value1 = arr[0];
+                    arr[0] = arr[1];
+                    arr[1] = value1;
                     return arr;
                 }
-                else if (arr[0] === arr[1]) {
+                else if(arr[0] > arr[1]){
+                    return arr;
+                }
+                else if(arr[0] === arr[1]){
                     return 'equal'
                 }
             }
-            else {
+            else{
                 return 'Invalid input'
             }
         }
@@ -66,7 +69,7 @@ function findAddress(obj) {
         const street = obj.street || '__';
         const house = obj.house || '__';
         const society = obj.society || '__';
-        const fullAddress = street + ',' + house + ', ' + society;
+        const fullAddress = street + ',' + house + ',' + society;
         return fullAddress;
     }
 }
@@ -74,26 +77,26 @@ function findAddress(obj) {
 
 
 function canPay(changeArray, totalDue) {
-    if (Array.isArray(changeArray) === false || typeof totalDue !== 'number') {
+    if(Array.isArray(changeArray) === false || typeof totalDue !== 'number'){
         return 'Please enter an array and a number type input'
     }
-    else if (changeArray.length === 0) {
+    else if(changeArray.length === 0){
         return 'Please enter an array of number'
     }
-    else {
+    else{
         let totalCoin = 0;
-        for (let item of changeArray) {
-            if (typeof item === 'number') {
+        for(let item of changeArray){
+            if(typeof item === 'number'){
                 totalCoin = totalCoin + item;
             }
-            else {
+            else{
                 return 'Please enter an array of number'
             }
         }
-        if (totalCoin >= totalDue) {
+        if(totalCoin >= totalDue){
             return true;
         }
-        else {
+        else{
             return false;
         }
     }
